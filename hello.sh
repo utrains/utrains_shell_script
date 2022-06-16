@@ -5,4 +5,12 @@
 
 ## ---------- script that display hello word in the screen -----------------
 
-echo "Yello Word !"
+echo "Hello Word !"
+echo "we are learning scripting"
+
+echo "check the number of cpu please wait..."
+nproc
+echo "check the number of cpu please wait..."
+lscpu
+echo "check the number of cpu please wait..."
+lsblk
