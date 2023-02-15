@@ -18,7 +18,7 @@ read city
 echo "What brought you to the store today "
 read R
 
-if [ -z ${na} ||]
+if [ -z ${na} ]
 then
   echo "Please enter a valid name"
   exit 2
