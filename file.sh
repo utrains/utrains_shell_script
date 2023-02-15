@@ -8,7 +8,7 @@
 
 # -----  check if the file exist with the filename ------------
 
-FILE-NAME=linux
+FILE_NAME=linux
 if [ -f ${FILE-NAME} ]   
     then 
     echo "file exist"

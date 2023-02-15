@@ -8,7 +8,7 @@
 
 # ------You can use tabulation ti indent your code for better visibility ------------
 yum install finger -y 
-if [$? -eq 0]   # --> this line check if the previous command work well
+if [ $? -eq 0 ]   # --> this line check if the previous command work well
     then 
     echo "Finger installed successfully"
 else
