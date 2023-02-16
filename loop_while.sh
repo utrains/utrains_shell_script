@@ -15,5 +15,5 @@ do
     echo "this is a while loop"
     sleep 2
     echo "success"
-    {{COUNT++}} # increment by 1 (COUNT = COUNT + 1) 
+    ((COUNT++)) # increment by 1 (COUNT = COUNT + 1) 
 done
