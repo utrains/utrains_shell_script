@@ -9,6 +9,12 @@
 echo "What is your name ?"
 read na
 
+if [ -z ${na} ]
+then
+  echo "Please enter a valid name"
+  exit 2
+fi
+
 echo "What year were you born ?" 
 read y  
 
@@ -17,12 +23,6 @@ read city
 
 echo "What brought you to the store today "
 read R
-
-if [ -z ${na} ||]
-then
-  echo "Please enter a valid name"
-  exit 2
-fi
 
 echo "Hello ${na} ypou were born in ${y}. you live in ${city} and the reason for coming here is : ${R}"
 

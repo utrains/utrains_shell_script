@@ -8,8 +8,9 @@
 
 # in this example, the list of users will be read from a file. 
 # the file should just contain the list of users (u6bt u7bt u8bt u9bt)
+echo "u6bt u7bt u8bt u9bt" >> /tmp/username
 
-for i in ${cat /tmp/username};
+for i in $(cat /tmp/username);
 do 
     useradd ${i}   # add user
     echo "user $i is successfully created"
