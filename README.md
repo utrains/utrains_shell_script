@@ -65,10 +65,10 @@ Find all your answers on this tutorial website (Your unofficial guidebook too sh
 
 ## Scripts
 
-You might have came across the word 'script' a lot of times, but what is the meaning of a script?  <br />
-So basically, a script is a command line program that contains a series of commands to be executed. These commands are execued by an interpreter. <br />
-Anything you can put into a command line, you can put in a script. And, scripts are great for automating tasks.
-If you find yourself repeating some commands frequently, you can, rather you should, create a script for doing it!
+You might have come across the word 'script' a lot of times, but what is the meaning of a script?  <br />
+Basically, a script is a command line program that contains a series of commands to be executed. These commands are execued by an interpreter. <br />
+Any command you can run in a terminal can be put inside a script. <br />
+Scripts are great for automating tasks. If you find yourself repeating some commands frequently, you can, rather you should create a script to do it!
 
 ## Our first script
 
@@ -87,19 +87,19 @@ $ ./script.sh
 
 ## Shebang
 
-A script starts with #! __Path To Bash__
+A script starts with #! __Path-To-Interpreter__
 
 `#` is often called sharp and `!` is called Bang, hence the name sharp bang, but generally people say it **shebang** instead of sharp bang.
 
 ### Comments
 
-Comments are started by a `#` sign, anything after pound sign on that line is ignored.
+Comments start with a `#` sign, anything after the pound sign on that line is ignored.
 
 #### Example
 ```sh
 #!/bin/bash
 echo "Hello World! Welcome to Utrains Scripting"
-# This line won be executed!
+# This line will not be executed!
 ```
 
 **Basic Examples Of Shell Scripts**
@@ -127,13 +127,13 @@ echo "This script uses zsh as the interpreter!"
 
 ### Use it or not?
 
-If a script does not contain the shebang, the commands are executed using your shell, so there are chances that the code might run properly, but still, that isn't the correct way of doing it! <br/>
+If a script does not contain the shebang, the commands are executed using your default shell, so there are chances that the code might run properly, but still, that isn't the correct way of doing it! <br/>
 Different shells have slightly varying syntax.
 <br />
 
 **More than just shell scripts!**  <br>
 
-You dont have to use shell as the interpreter for your scripts. For example, you can run a python script too by supplying the path in shebang.
+The shebang is not just used for shell interpreters. For example, you can run a python script by supplying the path to the interpreter in the shebang.
 
 ```sh
 #!/usr/bin/python
@@ -155,7 +155,7 @@ Variables are basically storage location that have a name and can store some dat
 ### Syntax For Variables
 
 ```sh
-VARIABLE_NAME="Value"
+VARIABLE_NAME=Value
 ```
 
 ### Important
@@ -164,7 +164,7 @@ VARIABLE_NAME="Value"
 
 * By convention, variables are uppercase
 
-* To use a variable, just write the variable name followed by the `$` sign
+* To use or call a variable, just write the variable name preceded by the `$` sign
 
 ### Examples Of Variables
 
@@ -231,7 +231,7 @@ No special character apart from underscore is allowed!
 
 ## Tests
 
-Scripts are basically needed to remove the need of again and again typing the commands which you use frequently or basically automating tasks. But, what if the script you wrote needs to execute differently under different circumstances? You can make the decisions using tests.
+When your script needs to run differently under various conditions, you can use tests to make decisions.
 
 ### Syntax for tests
 
@@ -245,18 +245,18 @@ Scripts are basically needed to remove the need of again and again typing the co
 [ -e /etc/passwd ]
 ```
 
-This test checks whether /etc/passwd exists, if it does, it returns true (or, it exits with a status of 0). If the file doesnt exists, it returns false (status 1).
+This test checks whether /etc/passwd exists, if it does, it returns true (it exits with a status of 0). If the file does not exist, it returns false (status 1).
 
 ### File Test Operations
 
 ```sh
-  -d FILE_NAM  # True if FILE_NAM is a directory
-  -e FILE_NAM  # True if FILE_NAM exists
-  -f FILE_NAM  # True if FILE_NAM exists and is a regular file
-  -r FILE_NAM  # True if FILE_NAM is readable
-  -s FILE_NAM  # True if FILE_NAM exists and is not empty
-  -w FILE_NAM  # True if FILE_NAM has write permission
-  -x FILE_NAM  # True if FILE_NAM is executable
+  -d FILE_NAME  # True if FILE_NAME is a directory
+  -e FILE_NAME  # True if FILE_NAME exists
+  -f FILE_NAME  # True if FILE_NAME exists and is a regular file
+  -r FILE_NAME  # True if FILE_NAME is readable
+  -s FILE_NAME  # True if FILE_NAME exists and is not empty
+  -w FILE_NAME  # True if FILE_NAME has write permission
+  -x FILE_NAME  # True if FILE_NAME is executable
 ```
 
 ### String Test Operations
@@ -264,8 +264,8 @@ This test checks whether /etc/passwd exists, if it does, it returns true (or, it
 ```sh
   -z STRING  # True if STRING is empty
   -n STRING  # True if STRING is not empty
-  STRING1 = STRIN2 # True if strings are equal
-  STRING1 != STRIN2 # True if strings are not equal
+  STRING1 = STRING2 # True if strings are equal
+  STRING1 != STRING2 # True if strings are not equal
 ```
 
 ### Arithmetic Operators
@@ -404,7 +404,7 @@ fi
 
 ### Case Statements
 
-The case statements are an alternative for if statements which are a little easier to read than complex if elif ladder. However, there are some limitations to case statements.
+The case statements are an alternative for if statements which are a little easier to read than the complex if elif ladder. However, there are some limitations to case statements.
 
 #### When to use
 
@@ -440,7 +440,7 @@ case "$VAR" in
 esac
 ```
 
-**Note** We can use wildcard to create an else like statement in case.
+**Note** We can use wildcard to create an else-like statement in case.
 
 ```sh
 case "$VAR" in
@@ -486,7 +486,7 @@ esac
 
 ## Iterative Statements
 
-Loops can execute a block of code a number of times and are basically used for performing iterations.
+Loops can execute a block of code a number of times and are basically used to perform iterations.
 
 ### The For Loop
 
@@ -585,9 +585,9 @@ While loop repeats a series of commands for as long as the given condition holds
 #### Syntax
 
 ```sh
-while [ CONNDITION_IS_TRUE ]
+while [ CONDITION_IS_TRUE ]
 do
-  # Commands will change he entry condition
+  # Commands will change the entry condition
   command 1
   command 2
     ...
@@ -598,12 +598,12 @@ done
 
 ### Infinite loop
 
-A loop which never exits, or basically, the entry condition never becomes false. If this happens by mistake, press `ctrl+c` or `cmd+c` to exit from the running script.
+It is a loop which never exits, or basically, the entry condition never becomes false. If this happens by mistake, press `ctrl+c` or `cmd+c` to exit from the running script.
 
 ```sh
 while [ CONNDITION_IS_TRUE ]
 do
-  # Commands do not change the conditiono
+  # Commands do not change the condition
   command 1
   command 2
     ...
@@ -628,7 +628,7 @@ done
 #### [Example: print first 10 natural numbers](./utrainsCourseScripts/loops/natur.sh)
 
 ```sh
-#!/bini/bash
+#!/bin/bash
 INDEX=1
 while [ $INDEX -lt 11 ]
 do
@@ -648,10 +648,10 @@ done
 
     #----------------------- Description ------------------------------
     # this script asks for the user's name and then asks if their name is correct. 
-    # If it responds with No, the program uses the While Loop to ask for its name again. 
-    # if it answers yes, the program exits the while loop
+    # If the user responds with No, the program uses the While Loop to ask for the name again. 
+    # if the user answers yes, the program exits the while loop
 
-while [ "$CORRECT" != y || "$CORRECT" != Y]
+while [ "$CORRECT" != y ] && [ "$CORRECT" != Y ]
 do
   read -p "Enter your username: " USERNAME
   read -p "Is $USERNAME correct Y/N? " CORRECT
