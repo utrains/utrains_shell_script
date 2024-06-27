@@ -4,11 +4,11 @@
     #Author : Utrains
     #Date : 01-Nov-2021
     
-## ---------- If statement allow you to check specific condition  -----------------
+## ---------- If statement allows you to check specific conditions  -----------------
 
-# ------You can use tabulation ti indent your code for better visibility ------------
+# ------You can use tabulation to indent your code for better visibility ------------
 yum install finger -y 
-if [$? -eq 0]   # --> this line check if the previous command work well
+if [$? -eq 0]   # --> this line check if the previous command works well
     then 
     echo "Finger installed successfully"
 else
