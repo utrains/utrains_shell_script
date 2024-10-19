@@ -7,12 +7,12 @@
 ## ---------- If statement allow you to check specific condition  -----------------
 
 # ------You can use tabulation ti indent your code for better visibility ------------
-yum install finger -y 
+yum install wget -y 
 if [$? -eq 0]   # --> this line check if the previous command work well
     then 
-    echo "Finger installed successfully"
+    echo "wget installed successfully"
 else
-    echo "finger did not install"
+    echo "wget did not install"
 fi
 
 yum install curl -y 
