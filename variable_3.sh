@@ -13,7 +13,7 @@ if [ ${USER} != root ]
     exit 1   ## imediatlly quit the script
 fi
 
-yum install finger -y 
+yum install wget -y 
 yum install curl -y 
 yum install zip -y 
 yum install vim -y 
